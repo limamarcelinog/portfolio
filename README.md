@@ -64,6 +64,14 @@ Full index with context: [projects/](projects/)
 
 ---
 
+## What I do not publish
+
+No company pipelines, metrics or business rules — not even with the data swapped. The logic is intellectual property, and changing the data does not change that. Work done inside companies appears here as case studies: the problem, the architecture, the trade-offs and my contribution, with no proprietary code. No credentials, no customer data, no tutorial projects.
+
+That is why the case studies above have no repository attached. It is a deliberate choice, and the reasoning is in [the roadmap](roadmap.md#what-i-do-not-publish-and-why), along with [what I am building next](roadmap.md).
+
+---
+
 ## Background in one paragraph
 
 Seven years moving from running a business to running the data behind one. I started as a partner and project coordinator in a services company, where I took monthly revenue from R$20k to R$70k and managed a team of 15. I moved into marketing and revenue at V4 Company as Account Manager, then Head of Growth, then Senior Data Analyst — the point where the work stopped being about opinions and started being about queries. Since then: Revenue Operations at Atomic Apps, commercial coordination at Br24 (Bitrix24's highest-impact global partner) and Atomic Group, and now Revenue Operations at Coders, where I own the commercial data infrastructure and lead the data and technology squad.

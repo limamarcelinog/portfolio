@@ -62,6 +62,14 @@ Projetos que eu desenhei e escrevi, onde o repositório é meu para compartilhar
 
 ---
 
+## O que eu não publico
+
+Pipelines, métricas ou regras de negócio de empresa não sobem — nem com os dados trocados. A lógica é propriedade intelectual, e trocar o dado não muda isso. O trabalho feito dentro de empresas aparece aqui como case study: o problema, a arquitetura, os trade-offs e a minha contribuição, sem código proprietário. Sem credenciais, sem dado de cliente, sem projeto de tutorial.
+
+É por isso que os case studies acima não têm repositório anexado. É uma escolha deliberada, e o raciocínio está no [roadmap](roadmap.md#what-i-do-not-publish-and-why), junto com [o que estou construindo a seguir](roadmap.md).
+
+---
+
 ## Contato
 
 - **E-mail** limamarcelinog@gmail.com
