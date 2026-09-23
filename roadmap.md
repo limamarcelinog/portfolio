@@ -6,7 +6,9 @@ Three well-documented projects are worth more than ten shallow ones, so this lis
 
 ---
 
-## 1. End-to-end commercial funnel *(flagship)*
+## 1. End-to-end commercial funnel *(flagship)* — **built**
+
+**→ [projects/funnel-analytics](projects/funnel-analytics/)** — the model and the written diagnosis. The dashboard layer is still open; the gold views are shaped to feed one.
 
 **Data** [Marketing Funnel by Olist](https://www.kaggle.com/datasets/olistbr/marketing-funnel-olist) — a public dataset from a real Brazilian company: 8,000 marketing qualified leads and 842 closed deals, with acquisition channel, first-contact date, close date, SDR and sales rep, and business segment.
 

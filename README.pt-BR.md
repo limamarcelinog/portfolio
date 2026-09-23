@@ -56,6 +56,7 @@ Projetos que eu desenhei e escrevi, onde o repositório é meu para compartilhar
 
 | Projeto | Stack | O que é |
 |---|---|---|
+| [**Funil comercial — modelagem e diagnóstico**](projects/funnel-analytics/) | PostgreSQL · SQL · Python | Modelo em camadas (bronze → prata → ouro) sobre dados públicos do funil de uma empresa real, e um diagnóstico escrito de onde o funil vaza: 23% dos leads convertendo abaixo da linha de base, 14,5% sem atribuição e convertendo o dobro do resto, e uma série temporal que não pode ser lida como tendência porque o time comercial não existia nos seis primeiros meses |
 | [Lucreiai](projects/lucreiai.md) | React Native · Expo · Supabase · TypeScript | App de unit economics para briqueiros: lucro real por peça depois de taxa, frete e reforma — não a margem bruta que as pessoas presumem |
 | [Desperta](projects/desperta.md) | Swift · iOS · AlarmKit · Vision | Alarme que só desliga depois que você levanta de verdade, validado pela câmera |
 | [Database engineering system](projects/database-engineering-system.md) | PostgreSQL · Supabase · agentes de IA | Sistema de agentes especialistas que audita e evolui um banco de produção sob um protocolo rígido |

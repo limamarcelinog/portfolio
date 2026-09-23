@@ -56,6 +56,7 @@ Projects I designed and wrote myself, where the repository is mine to share.
 
 | Project | Stack | What it is |
 |---|---|---|
+| [**Commercial funnel — modeling and diagnosis**](projects/funnel-analytics/) | PostgreSQL · SQL · Python | A layered model (bronze → silver → gold) over a real company's public funnel data, and a written diagnosis of where the funnel leaks: 23% of leads converting below baseline, 14.5% unattributable and converting twice as well as the rest, and a time series that cannot be read as a trend because the sales team did not exist for its first six months |
 | [Lucreiai](projects/lucreiai.md) | React Native · Expo · Supabase · TypeScript | Unit-economics app for secondhand resellers: real profit per item after fees, shipping and refurbishment — not the gross margin people assume |
 | [Desperta](projects/desperta.md) | Swift · iOS · AlarmKit · Vision | An alarm that only stops once you physically get up, verified by the camera |
 | [Database engineering system](projects/database-engineering-system.md) | PostgreSQL · Supabase · AI agents | A specialist agent system that audits and evolves a production database under a strict operating protocol |
