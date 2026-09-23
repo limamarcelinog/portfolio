@@ -26,16 +26,27 @@ A maior parte de quem trabalha com Revenue Operations para no relatório. Eu cui
 
 ---
 
-## Case studies
+## Trabalho em destaque
 
-Trabalho feito dentro de empresas. Nenhum código proprietário é publicado aqui — os documentos descrevem o problema, a arquitetura e a minha contribuição.
+### Revenue data platform — o sistema pelo qual meu trabalho é avaliado
+
+**[Ler o case study →](case-studies/revenue-data-platform.md)**
+
+A infraestrutura de dados comerciais de uma empresa de tech education. Cada lead seguido desde o anúncio que o produziu, passando por qualificação, agendamento e call de vendas, até o aluno matriculado e sua jornada de sucesso — em um modelo só, com uma definição por métrica, em vez de cinco times exportando cinco versões da mesma pergunta.
+
+Modelagem em camadas (bruto → tratado → confiável) em PostgreSQL/Supabase · resolução de identidade entre cinco sistemas de origem · camada semântica em SQL · contratos de RPC com autorização aplicada no banco · cache por fato-dia · dashboards em React e TypeScript para diretoria, vendas, pré-vendas, marketing e CS.
+
+A parte operacional também é minha: definição dos indicadores comerciais, lógica de comissionamento, dois squads comerciais e as réguas de reengajamento que devolvem ao pipeline as etapas paradas do funil.
+
+*Construído dentro de uma empresa — o código é proprietário. O case study cobre a arquitetura, os trade-offs por trás dela e a minha contribuição.*
+
+### Também
 
 | Case study | O que é |
 |---|---|
-| [Revenue data platform](case-studies/revenue-data-platform.md) | Visibilidade de funil ponta a ponta numa empresa de tech education — do primeiro contato com o lead até a jornada de sucesso do aluno |
-| [Multi-channel marketing attribution](case-studies/marketing-attribution.md) | Ligar investimento de Meta, Google e LinkedIn Ads ao funil de conversão, até o nível de criativo |
-| [Customer health & churn prevention](case-studies/customer-health-and-churn.md) | Sistema de healthscore para Customer Success, com a interface que o tornou operacional |
-| [Database engineering practice](case-studies/database-engineering-practice.md) | Como eu mudo um banco de produção sem quebrá-lo — o protocolo operacional pelo qual eu trabalho |
+| [Multi-channel marketing attribution](case-studies/marketing-attribution.md) | Ligar investimento de Meta, Google e LinkedIn Ads ao funil de conversão, até o nível de criativo — uma regra de atribuição escrita, em vez de cinco plataformas reivindicando a mesma conversão |
+| [Customer health & churn prevention](case-studies/customer-health-and-churn.md) | Modelo de healthscore com score de registro corrigível por humano, e a aplicação interna que tornou o CS proativo |
+| [Database engineering practice](case-studies/database-engineering-practice.md) | Como eu mudo um banco de produção sem quebrá-lo — o protocolo pelo qual trabalho, e o que ele pegou |
 
 ---
 

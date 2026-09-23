@@ -26,16 +26,27 @@ Most people in Revenue Operations stop at the report. I own the whole chain: ing
 
 ---
 
-## Case studies
+## Selected work
 
-Work done inside companies. No proprietary code is published here — these describe the problem, the architecture, and my specific contribution.
+### Revenue data platform — the system my work is judged by
+
+**[Read the case study →](case-studies/revenue-data-platform.md)**
+
+The commercial data infrastructure of a tech education company. Every lead followed from the ad that produced it, through qualification, scheduling and the sales call, to the enrolled student and their success journey — in one model, with one definition per metric, instead of five teams exporting five versions of the same question.
+
+Layered modeling (raw → staging → trusted) on PostgreSQL/Supabase · identity resolution across five source systems · a semantic layer in SQL · RPC contracts with authorization enforced in the database · fact-day caching · React and TypeScript dashboards for leadership, sales, pre-sales, marketing and customer success.
+
+I own the operating side as well: commercial KPI definitions, commission logic, two sales squads, and the reengagement cadences that turn dormant funnel stages back into pipeline.
+
+*Built inside a company — the code is proprietary. The case study covers the architecture, the trade-offs behind it and my specific contribution.*
+
+### Also
 
 | Case study | What it is |
 |---|---|
-| [Revenue data platform](case-studies/revenue-data-platform.md) | End-to-end funnel visibility for a tech education company — from first lead contact to student success journey |
-| [Multi-channel marketing attribution](case-studies/marketing-attribution.md) | Tying Meta, Google and LinkedIn Ads spend to the conversion funnel, down to creative level |
-| [Customer health & churn prevention](case-studies/customer-health-and-churn.md) | A health scoring system for Customer Success, with the interface that made it operational |
-| [Database engineering practice](case-studies/database-engineering-practice.md) | How I change a production database without breaking it — the operating protocol I work by |
+| [Multi-channel marketing attribution](case-studies/marketing-attribution.md) | Tying Meta, Google and LinkedIn Ads spend to the conversion funnel, down to creative level — one written attribution rule instead of five platforms each claiming the same conversion |
+| [Customer health & churn prevention](case-studies/customer-health-and-churn.md) | A health scoring model with a human-correctable score of record, and the internal application that made Customer Success proactive |
+| [Database engineering practice](case-studies/database-engineering-practice.md) | How I change a production database without breaking it — the operating protocol I work by, and what running it caught |
 
 ---
 

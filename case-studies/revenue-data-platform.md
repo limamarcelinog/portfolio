@@ -39,6 +39,46 @@ Three problems stacked on top of each other:
 
 **Dashboards per team, in React and TypeScript**, reading those RPCs in real time: daily commercial indicators and funnels by channel, per-closer and per-SDR performance, pre-sales CRM and call distribution, marketing by channel down to creative level, customer success health and retention, and an executive view with targets, cash flow and forecast.
 
+## Architecture
+
+```mermaid
+flowchart TD
+    S1[Ad platforms<br/>Meta · Google · LinkedIn]
+    S2[CRM]
+    S3[Scheduling]
+    S4[Learning platform]
+    S5[Billing]
+
+    R[RAW<br/>ingested as received, never modified<br/>the evidence layer]
+    ST[STAGING<br/>cleaning · identity resolution<br/>timestamp and status normalization]
+    T[TRUSTED<br/>one documented grain per business fact<br/>business rule applied exactly once]
+    SEM[SEMANTIC LAYER<br/>one definition per metric, in SQL]
+    RPC[RPC CONTRACTS<br/>named parameters · documented return shape<br/>authorization enforced in the database]
+    C[FACT-DAY CACHE<br/>computed once per day<br/>composed into arbitrary periods at request time]
+    D[DASHBOARDS — React / TypeScript<br/>leadership · sales · pre-sales · marketing · CS]
+
+    S1 --> R
+    S2 --> R
+    S3 --> R
+    S4 --> R
+    S5 --> R
+    R --> ST --> T --> SEM --> RPC --> C --> D
+```
+
+The direction of that arrow is the whole argument. A number shown to the board can be walked backwards through every layer to the row a source system emitted, and the business rule that produced it exists in exactly one place along the way.
+
+## Decisions and trade-offs
+
+**Identity resolution belongs in staging, not in the dashboard.** The same person arrives as a Meta lead, a CRM contact, a calendar invitee and a platform student, with a different key in each. The tempting fix is to join on email at query time, in each dashboard that needs it. That works until two dashboards disagree about what counts as the same person — and they will, because one of them will normalize casing and the other will not. Resolving identity once, in staging, costs more to build and removes an entire class of "why do these two screens disagree" from the company's life.
+
+**The application may not write SQL.** Every read goes through an RPC with an explicit contract. This is more work than exposing tables and letting the frontend query them. It buys three things: query plans stay predictable because the shapes are fixed, row-level security stays enforceable because the rule lives in the database rather than in a client that can be bypassed, and — most importantly — the frontend is structurally incapable of inventing a new definition of a metric. Metric drift in a company does not happen by decision. It happens because someone added a filter to a dashboard.
+
+**Facts are computed per day and composed in the application.** Commercial dashboards ask for overlapping periods constantly: today, this week, month to date, the same month last year. Computing each period from scratch re-scans history on every page load. Computing immutable facts once per day and summing them for any requested window trades a cache invalidation problem for a scan problem, and the cache invalidation problem is the one you can reason about — a closed day does not change.
+
+**The analytical layer is read-only by default, and that is enforced, not requested.** No writes, no DDL, no indexes, no materialized views added to fix a performance problem that can be fixed in the application. The few components that genuinely need to write go through a separate, explicitly listed path with an automated guardrail. The reason is not caution for its own sake: an analytical workload that can write to a production database will eventually write to it during an incident, at the worst possible moment, by someone reasonable who is in a hurry.
+
+**Commission logic is where modeling mistakes get discovered immediately.** Most data modeling errors surface slowly — a metric is subtly wrong for a quarter before anyone notices. Commission is different: it turns closed deals into what a person is paid, and it is audited by the most motivated reviewers in the company. Building it forced a level of rigor about grain and edge cases that the rest of the model benefited from.
+
 ## The operating side
 
 The platform is only half the work. I also own the process it measures:
