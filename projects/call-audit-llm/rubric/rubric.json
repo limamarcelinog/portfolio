@@ -1,0 +1,71 @@
+{
+  "rubric_id": "b2b-discovery-call",
+  "version": "1.2.0",
+  "scale": {
+    "min": 0,
+    "max": 3,
+    "note": "Every level has a behavioural anchor. A model asked for 'a score out of 3' invents its own standard and drifts between calls; a model asked to pick the anchor that matches is doing classification, which is a far more stable task."
+  },
+  "criteria": [
+    {
+      "id": "discovery_depth",
+      "name": "Discovery depth",
+      "question": "Did the rep uncover the prospect's actual problem, with consequence attached?",
+      "anchors": {
+        "0": "No problem established. The rep pitched without asking, or accepted the prospect's opening statement at face value.",
+        "1": "A problem was named but stayed at surface level ('we need better reporting'). No cost, no consequence, no mechanism.",
+        "2": "The rep reached the mechanism behind the problem — what breaks, who it affects, how often — but did not establish what it costs.",
+        "3": "The rep reached mechanism AND consequence, with the prospect stating a number, a deadline, or a named business risk in their own words."
+      }
+    },
+    {
+      "id": "qualification",
+      "name": "Qualification",
+      "question": "Are budget, decision process and timeline established well enough to forecast this deal?",
+      "anchors": {
+        "0": "None established. The rep does not know who decides or when.",
+        "1": "One of the three established, usually timeline, and usually vague ('sometime this quarter').",
+        "2": "Two of the three established, or all three but only from the prospect's assumptions rather than confirmed facts.",
+        "3": "All three established explicitly, including who else must approve and what has to happen before they can sign."
+      }
+    },
+    {
+      "id": "objection_handling",
+      "name": "Objection handling",
+      "question": "When resistance appeared, did the rep engage with it or move past it?",
+      "anchors": {
+        "0": "An objection was raised and the rep changed the subject, talked over it, or conceded immediately.",
+        "1": "The rep answered the literal objection without checking what was behind it.",
+        "2": "The rep asked at least one question to understand the objection before responding.",
+        "3": "The rep uncovered the concern behind the objection, addressed that, and confirmed with the prospect that it was resolved.",
+        "na": "No objection or resistance appeared in this call."
+      }
+    },
+    {
+      "id": "next_step",
+      "name": "Next step",
+      "question": "Did the call end with a specific, dated, mutually agreed next step?",
+      "anchors": {
+        "0": "No next step. The call ended on 'I'll follow up' or the prospect saying they would think about it.",
+        "1": "A next step was proposed but not dated, or dated but one-sided ('I'll send something over this week').",
+        "2": "A dated next step both sides agreed to, but without the specific people or the specific decision it serves.",
+        "3": "A dated next step, agreed by both sides, with the right people named and an explicit purpose tied to the decision."
+      }
+    },
+    {
+      "id": "listening_discipline",
+      "name": "Listening discipline",
+      "question": "Did the rep leave room for the prospect to talk, and build on what they said?",
+      "anchors": {
+        "0": "The rep dominated. Long monologues, prospect reduced to acknowledgements.",
+        "1": "The rep asked questions but did not use the answers — the script continued regardless of what was said.",
+        "2": "The rep listened and responded to what was said, with occasional lapses into pitch.",
+        "3": "The rep consistently built each question on the prospect's previous answer, and the prospect did most of the talking."
+      }
+    }
+  ],
+  "output_contract": {
+    "evidence_required": true,
+    "evidence_rule": "Every score must cite a verbatim span from the transcript. The pipeline rejects a score whose quote does not appear in the source — see src/validate.py. This is the cheapest available guard against a confident, fluent, invented justification."
+  }
+}

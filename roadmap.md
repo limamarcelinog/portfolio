@@ -23,7 +23,9 @@ Three well-documented projects are worth more than ten shallow ones, so this lis
 
 ---
 
-## 2. LLM-based sales call auditing
+## 2. LLM-based sales call auditing — **built**
+
+**→ [projects/call-audit-llm](projects/call-audit-llm/)** — the rubric, the pipeline, the reliability measurement and the aggregation guards. The live API path is written but not yet run.
 
 **Data** Synthetic call transcripts, written by me. No real customer or seller conversation is used.
 
